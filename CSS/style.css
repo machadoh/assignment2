@@ -1,0 +1,42 @@
+h2{
+	font-size: 40px;
+	font-family:'Arial';
+	text-align:center;
+	color: Black;
+}
+
+h3{
+	font-size: 20px;
+	font-family:'Arial';
+	text-align:center;
+	color: Black;
+
+}
+img{
+	width:30%;
+	height: auto;
+	float:left;
+}
+
+p{
+	font-size: 20px;
+	font-family:'Arial';
+	text-align:left;
+	color: Black;
+	float:left;
+
+}
+body{
+    background-color: white;
+}
+
+footer{
+	color:Black;
+	font-size:40px;
+	position: absolute;
+ 	right: ;
+ 	bottom: 0;
+  	left: 0;
+  	padding: 1rem;
+  	text-align: right;
+}
