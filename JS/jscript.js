@@ -1,15 +1,14 @@
+	
 	var BirthVar = document.getElementById("birth");
-	var EmailVar = document.getElementById("email");
-	var NameVar = document.getElementById("name");
-	var PhoneVar = document.getElementById("phone");
-	var SubmitVar = document.getElementById("Submit");
-
 	BirthVar.addEventListener("change", validateBirth, false);
+	var EmailVar = document.getElementById("email");
 	EmailVar.addEventListener("change", validateEmail, false);
+	var NameVar = document.getElementById("name");
 	NameVar.addEventListener("change", validateName, false);
+	var PhoneVar = document.getElementById("phone");
 	PhoneVar.addEventListener("change", validatePhone, false);
-	SubmitVar.addEventListener("click",screenOff , false);
-
+	var SubmitVar = document.getElementById("Submit");
+	SubmitVar.addEventListener("click", finishIt , false);
 
 
       function validateName(event){
@@ -45,21 +44,21 @@
         }
       }
       function submitForm(){
-        var a = /^[-a-zA-Z_.]* [-a-zA-Z_.]*$/.test(document.getElementById("name").value);
-        var b = /^\d{2}\-\d{2}\-\d{4}$/.test(document.getElementById("birth").value);
-        var c = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(document.getElementById("email").value);
-        var d = /^\d{3}\-\d{3}\-\d{4}$/.test(document.getElementById("phone").value);
+        var name1 = /^[-a-zA-Z_.]* [-a-zA-Z_.]*$/.test(document.getElementById("name").value);
+        var birth1 = /^\d{2}\-\d{2}\-\d{4}$/.test(document.getElementById("birth").value);
+        var email1 = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(document.getElementById("email").value);
+        var phone1 = /^\d{3}\-\d{3}\-\d{4}$/.test(document.getElementById("phone").value);
 
-        if(!a){
+        if(!name1){
          alert("Name Error: Incorrect Format");
          return false;
-        } else if(!b){
+        } else if(!birth1){
          alert("Birth date Error:Incorrect Format");
          return false;
-       } else if(!c){
+       } else if(!email1){
           alert("Email Error: Incorrect Format");
           return false;
-        }else if(!d){
+        }else if(!phone1){
          alert("Phone Error: Incorrect Format");
          return false;
         }else{
@@ -70,7 +69,7 @@
       }
 
 
-      function screenOff(event){
+      function finishIt(event){
         var decide = submitForm();
         if(!decide){
           event.preventDefaullt();
